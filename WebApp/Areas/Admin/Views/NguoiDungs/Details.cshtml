@@ -1,0 +1,25 @@
+﻿@model WebApp.Areas.Admin.Models.NguoiDung
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NguoiDung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNguoiDung)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TenNguoiDung)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MaNguoiDung">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
