@@ -15,8 +15,8 @@
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
-                    <a href="index.html">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">
+                        <i class="fa fa-dashboard"></i> <span>Trang Chủ</span>
                     </a>
                 </li>
                 <li class="treeview">
@@ -30,74 +30,76 @@
                         <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="SanPhams" asp-action="Index"><i class="fa fa-angle-right"></i>Sản phẩm</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
-                    <a href="charts.html">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Charts</span>
-                        <span class="label label-primary pull-right">new</span>
-                    </a>
-                </li>
-                <li class="treeview">
-                </li>
+        
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-laptop"></i>
-                        <span>UI Elements</span>
+                        <span>Quản lí nhân sự </span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="general.html"><i class="fa fa-angle-right"></i> General</a></li>
-                        <li><a href="icons.html"><i class="fa fa-angle-right"></i> Icons</a></li>
-                        <li><a href="buttons.html"><i class="fa fa-angle-right"></i> Buttons</a></li>
-                        <li><a href="typography.html"><i class="fa fa-angle-right"></i> Typography</a></li>
+                       
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="NhanVienBanHangs" asp-action="Index"><i class="fa fa-angle-right"></i>Nhân viên bán hàng</a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="NhanVienGiaoHangs" asp-action="Index"><i class="fa fa-angle-right"></i>Nhân viên giao hàng</a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="NhanVienQuanlis" asp-action="Index"><i class="fa fa-angle-right"></i>Nhân viên quản lí</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="widgets.html">
-                        <i class="fa fa-th"></i> <span>Widgets</span>
-                        <small class="label pull-right label-info">08</small>
-                    </a>
-                </li>
+               
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-edit"></i> <span>Forms</span>
+                        <i class="fa fa-edit"></i> <span>Quản lí tin</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="forms.html"><i class="fa fa-angle-right"></i> General Forms</a></li>
-                        <li><a href="validation.html"><i class="fa fa-angle-right"></i> Form Validations</a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="ChuDes" asp-action="Index"><i class="fa fa-angle-right"></i>Nhân viên giao hàng</a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="TinTucs" asp-action="Index"><i class="fa fa-angle-right"></i>Nhân viên quản lí</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-table"></i> <span>Tables</span>
+                        <i class="fa fa-table"></i> <span>Quản lí khách hàng</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="tables.html"><i class="fa fa-angle-right"></i> Simple tables</a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="KhachHangs" asp-action="Index"><i class="fa fa-angle-right"></i> Khách hàng</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-envelope"></i> <span>Mailbox </span>
-                        <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1">08</small><span class="label label-primary1 pull-right">02</span>
+                        <i class="fa fa-envelope"></i> <span>Quản lí khuyến mãi</span>
+                        <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="inbox.html"><i class="fa fa-angle-right"></i> Mail Inbox </a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="KhuyenMais" asp-action="Index"><i class="fa fa-angle-right"></i>Khuyến mãi</a></li>
                         <li><a href="compose.html"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-folder"></i> <span>Examples</span>
+                        <i class="fa fa-folder"></i> <span>Quản lí nhà cung cấp</span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="login.html"><i class="fa fa-angle-right"></i> Login</a></li>
-                        <li><a href="signup.html"><i class="fa fa-angle-right"></i> Register</a></li>
-                        <li><a href="404.html"><i class="fa fa-angle-right"></i> 404 Error</a></li>
-                        <li><a href="500.html"><i class="fa fa-angle-right"></i> 500 Error</a></li>
-                        <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="NhaCungCaps" asp-action="Index"><i class="fa fa-angle-right"></i>Nhà cung cấp</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i> <span>Quản lí Hóa Đơn</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="HoaDons" asp-action="Index"><i class="fa fa-angle-right"></i>Hóa đơn</a></li>
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="ChiTietHoaDons" asp-action="Index"><i class="fa fa-angle-right"></i>Chi tiết hóa đơn</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i> <span>Quản lí Tài Khoản</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a class="nav-link text-dark" asp-area="Admin" asp-controller="NguoiDungs" asp-action="Index"><i class="fa fa-angle-right"></i>Nhân viên giao hàng</a></li>
                     </ul>
                 </li>
                 <li class="header">LABELS</li>
