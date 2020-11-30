@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -58,11 +60,28 @@ namespace WebApp.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaNVBan,HinhDaiDien,HoTenNVBan,NgaySinh,SDT,DiaChi,TrangThai,MaND")] KhachHang khachHang)
+        public async Task<IActionResult> Create([Bind("MaNVBan,HinhDaiDien,HoTenNVBan,NgaySinh,SDT,DiaChi,TrangThai,MaND")] KhachHang khachHang,IFormFile ful)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(khachHang);
+                await _context.SaveChangesAsync();
+
+                //Lưu file vào đường dẫn
+                var path = Path.Combine(
+                    Directory.GetCurrentDirectory(), "wwwroot/img/khachhang",
+                    khachHang.MaNVBan + "" + ful.FileName.Split(".")[ful.FileName.Split(".").Length - 1]);//cắt đuôi file ()
+               //copy file day
+               using (var stream = new FileStream(path,FileMode.Create))
+                {
+                    await ful.CopyToAsync(stream);
+                }
+
+                //Cập nhật lại tên
+                khachHang.HinhDaiDien = khachHang.MaNVBan + "." + ful.FileName.Split(".")[ful.FileName.Split(".").Length-1];
+
+                //Cập nhật vào db
+                _context.Update(khachHang);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

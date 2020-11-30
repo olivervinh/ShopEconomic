@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -55,12 +56,15 @@ namespace WebApp.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MaNguoiDung,TenTaiKhoan,MatKhau,PhanQuyen,TrangThai")] NguoiDung nguoiDung)
+        public async Task<IActionResult> Create([Bind("MaNguoiDung,TenTaiKhoan,MatKhau,PhanQuyen,TrangThai")] NguoiDung nguoiDung, IFormFile ful)
         {
             if (ModelState.IsValid)
             {
+
                 _context.Add(nguoiDung);
                 await _context.SaveChangesAsync();
+
+                //lưu file vào đường dẫn 
                 return RedirectToAction(nameof(Index));
             }
             return View(nguoiDung);
