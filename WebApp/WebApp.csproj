@@ -8,6 +8,12 @@
     <Folder Include="Models\" />
     <Folder Include="wwwroot\admin\" />
     <Folder Include="wwwroot\img\khachhang\" />
+    <Folder Include="wwwroot\img\chude\" />
+    <Folder Include="wwwroot\img\tintuc\" />
+    <Folder Include="wwwroot\img\sanpham\" />
+    <Folder Include="wwwroot\img\nhanvienquanli\" />
+    <Folder Include="wwwroot\img\nhanviengiaohang\" />
+    <Folder Include="wwwroot\img\nhanvienbanhang\" />
   </ItemGroup>
 
   <ItemGroup>
